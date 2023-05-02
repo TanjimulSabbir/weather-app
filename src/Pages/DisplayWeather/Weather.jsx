@@ -2,6 +2,7 @@ import React from 'react';
 import { WiDayCloudyHigh } from "react-icons/wi";
 import getWeatherData from '../../Hooks/getWeatherData';
 import WeatherHeader from './WeatherHeader';
+import nightBg from "../../assets/images/Clear Night.webp"
 
 const Weather = ({ temperature, locationName }) => {
     console.log(locationName, "weather component")
@@ -27,6 +28,14 @@ const Weather = ({ temperature, locationName }) => {
         <div>
             <div>
                 <WeatherHeader locationName={locationName}></WeatherHeader>
+            </div>
+            <div className='relative mt-6'>
+                <div>
+                    <img src={nightBg} alt='' />
+                </div>
+                <div className='absolute'>
+
+                </div>
             </div>
         </div>
     );

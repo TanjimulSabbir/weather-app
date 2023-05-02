@@ -1,17 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CgMenuGridO } from "react-icons/cg";
 
 const WeatherHeader = ({ locationName }) => {
+    const [openMenu, setOpenMenu] = useState(false);
+    const Menu = <>
+        <button className="w-full md:w-auto bg-gray-200 p-2 rounded-lg">Current Weather</button>
+        <button className="w-full md:w-auto bg-gray-200 p-2 rounded-lg">Hourly Forecast</button>
+        <button className="w-full md:w-auto bg-gray-200 p-2 rounded-lg">Today Forecast</button>
+        <button className="w-full md:w-auto bg-gray-200 p-2 rounded-lg">Weekly Forecast</button>
+        <button className="w-full md:w-auto bg-gray-200 p-2 rounded-lg">Monthly Forecast</button>
+    </>
+
     return (
-        <div className='flex flex-col space-y-6 md:flex-row md:justify-around md:items-center'>
-            <div className='flex items-center justify-center md:justify-start space-x-6 px-2 py-2'>
-                <p>{locationName}</p>
+        <div className='flex justify-between md:flex-row items-center p-4 rounded'>
+
+            <div className='flex items-center md:space-x-6 px-2'>
+                <p>{locationName}, Bangladesh</p>
+
+                {/* Small Device */}
+                <div onClick={() => setOpenMenu(true)} className='md:hidden absolute right-8'>
+                    <button className='p-2'>
+                        <CgMenuGridO className='text-lg' />
+                    </button>
+                </div>
+
+                {/* Small Device */}
+                <div className={`md:hidden ${openMenu ? "block" : "hidden"} absolute top-0 right-0 w-[360px] min-h-screen bg-black bg-opacity-80 rounded-md pt-[25%] px-6 z-50`}>
+
+                    <div className='flex relative w-full flex-col space-y-4'>
+                        <button onClick={() => setOpenMenu(false)} className='text-2xl absolute right-0 -top-12 rounded-full border-white bg-white p-1'>❌</button>
+                        {Menu}
+                    </div>
+                </div>
             </div>
-            <div className='flex flex-col space-y-4 md:flex-row md:space-x-10 md:items-center'>
-                <button className="bg-gray-200 px-2 py-2 rounded-lg">Current Weather</button>
-                <button className="bg-gray-200 px-2 py-2 rounded-lg">Hourly Forecast</button>
-                <button className="bg-gray-200 px-2 py-2 rounded-lg">Today Forecast</button>
-                <button className="bg-gray-200 px-2 py-2 rounded-lg">Weekly Forecast</button>
-                <button className="bg-gray-200 px-2 py-2 rounded-lg">Monthly Forecast</button>
+
+
+            {/* Large Device */}
+            <div className='hidden md:flex space-x-8'>
+                {Menu}
             </div>
         </div>
     );

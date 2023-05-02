@@ -13,7 +13,7 @@ function App() {
   }
 
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-blue-800'>
       <Header temperature={temperature} handleInput={handleInput} locationName={locationName} >
       </Header>
       <Home temperature={temperature} locationName={locationName}>
