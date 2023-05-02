@@ -1,7 +1,7 @@
 import React from 'react';
 import { WiDayCloudyHigh } from "react-icons/wi";
 
-const Weather = ({temperature,handleInput,locationName}) => {
+const Weather = ({ temperature, handleInput, locationName }) => {
     return (
         <div>
             <div>
