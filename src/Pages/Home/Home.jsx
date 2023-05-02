@@ -1,10 +1,12 @@
 import React from 'react';
 import Weather from '../DisplayWeather/Weather';
 
-const Home = ({temperature,handleInput,locationName}) => {
+const Home = ({ temperature, locationName }) => {
     return (
         <div className='UniversalPadding mt-10'>
-            <Weather temperature={temperature} handleInput={handleInput} locationName={locationName}></Weather>
+            <Weather temperature={temperature}
+                locationName={locationName}>
+            </Weather>
         </div>
     );
 };

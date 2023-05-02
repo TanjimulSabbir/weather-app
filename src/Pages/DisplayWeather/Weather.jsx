@@ -1,7 +1,11 @@
 import React from 'react';
 import { WiDayCloudyHigh } from "react-icons/wi";
+import getWeatherData from '../../Hooks/getWeatherData';
 
-const Weather = ({ temperature, handleInput, locationName }) => {
+const Weather = ({ temperature, locationName }) => {
+    console.log(locationName, "weather component")
+    const [WeatherData] = getWeatherData(locationName);
+    console.log(WeatherData, "weather component")
     return (
         <div>
             <div>

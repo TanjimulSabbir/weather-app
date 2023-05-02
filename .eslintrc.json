@@ -9,7 +9,8 @@
     ],
     "overrides": [],
     "ecmaFeatures": {
-        "jsx": true
+        "jsx": true,
+        "js": true
     },
     "parserOptions": {
         "ecmaVersion": "latest",

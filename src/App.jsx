@@ -12,12 +12,11 @@ function App() {
     setLocationName(Location)
   }
 
-
   return (
     <div className='min-h-screen'>
       <Header temperature={temperature} handleInput={handleInput} locationName={locationName} >
       </Header>
-      <Home temperature={temperature} handleInput={handleInput} locationName={locationName}>
+      <Home temperature={temperature} locationName={locationName}>
       </Home>
     </div>
   )
