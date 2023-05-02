@@ -2,15 +2,8 @@ import React, { useState } from 'react';
 import { IoSearchOutline } from "react-icons/io5";
 import { WiDayCloudyHigh } from "react-icons/wi";
 
-const Navbar = () => {
-    const [locationName, setLocationName] = useState("Rajshahi");
-    const [temperature,setTemparature]= useState(32)
-
-    const handleInput = (event) => {
-        const Location = event.target.value;
-       setLocationName(Location)
-}
-
+const Navbar = ({temperature,handleInput,locationName}) => {
+    
     return (
         <div>
             <div className='UniversalPadding py-3 bg-blue-400 flex items-center'>
