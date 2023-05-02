@@ -36,7 +36,7 @@ const WeatherHeader = ({ locationName }) => {
 
 
             {/* Large Device */}
-            <div className='hidden md:flex space-x-8'>
+            <div className='hidden md:flex md:space-x-2 lg:space-x-8'>
                 {Menu}
             </div>
         </div>
