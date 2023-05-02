@@ -6,8 +6,8 @@ import nightBg from "../../assets/images/Clear Night.webp"
 
 const Weather = ({ temperature, locationName }) => {
     console.log(locationName, "weather component")
-    const [WeatherData] = getWeatherData(locationName);
-    console.log(WeatherData, "weather component")
+    const { data } = getWeatherData(locationName);
+    console.log(data, "weather component")
     const ApiObjectKeys = [
         { "coord": "its for map integration(longitude and latitude)" },
         { "weather": "It includes an ID, a description of the weather,main info(sky clear), and an icon code" },
@@ -34,7 +34,8 @@ const Weather = ({ temperature, locationName }) => {
                     <img src={nightBg} alt='' />
                 </div>
                 <div className='absolute'>
-
+                    <p>Current Weather</p>
+                    <p>{data.main.temperature}</p>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ const getWeatherData = (locationName) => {
             .catch(error => console.log(error));
     }, [locationName]);
 
-    return [data];
+    return { data };
 };
 
 export default getWeatherData;
