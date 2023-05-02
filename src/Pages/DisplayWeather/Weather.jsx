@@ -1,6 +1,7 @@
 import React from 'react';
 import { WiDayCloudyHigh } from "react-icons/wi";
 import getWeatherData from '../../Hooks/getWeatherData';
+import WeatherHeader from './WeatherHeader';
 
 const Weather = ({ temperature, locationName }) => {
     console.log(locationName, "weather component")
@@ -25,9 +26,7 @@ const Weather = ({ temperature, locationName }) => {
     return (
         <div>
             <div>
-                <div className='flex items-center space-x-6'>
-                    <p>{locationName}</p>
-                </div>
+                <WeatherHeader locationName={locationName}></WeatherHeader>
             </div>
         </div>
     );
