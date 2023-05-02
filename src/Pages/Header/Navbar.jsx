@@ -4,7 +4,7 @@ import { WiDayCloudyHigh } from "react-icons/wi";
 
 const Navbar = () => {
     const [locationName, setLocationName] = useState("Rajshahi");
-    const [temperature,setTemparature]=useState(32)
+    const [temperature,setTemparature]= useState(32)
 
     const handleInput = (event) => {
         const Location = event.target.value;
@@ -15,7 +15,7 @@ const Navbar = () => {
         <div>
             <div className='UniversalPadding py-3 bg-blue-400 flex items-center'>
                 <div className='px-4 relative w-full max-w-sm'>
-                     <input onChange={handleInput} className='px-4 py-1 rounded-3xl w-full bg-gray-800'  type='text' name='Location' placeholder='Search for location' />
+                     <input onBlur={handleInput} className='px-4 py-1 rounded-3xl w-full bg-gray-800'  type='text' name='Location' placeholder='Search for location' />
                     <IoSearchOutline className='absolute bottom-2 right-8'/>
                 </div>
                 <div className='flex items-center space-x-6'>
