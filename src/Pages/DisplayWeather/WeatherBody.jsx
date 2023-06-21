@@ -43,31 +43,46 @@ const WeatherBody = ({ temperature, locationName }) => {
                 <div>
                     <img src={nightBg} alt='' />
                 </div>
-                <div className='absolute top-6 left-6 text-white'>
-                    <p>Current Weather</p>
-                    <p>{data?.main?.temperature}</p>
-                    <p>{formattedTime}</p>
-                    <div className='flex space-x-6 items-center'>
-                        <img src={iconUrl} alt="icon" srcset="" />
-                        <p>{celsiusTemperature}°C</p>
-                        <p className='flex flex-col'>
-                            <span>{data.weather[0].main}</span>
-                            <span>Feel Like {(data.main.feels_like - 273.15).toFixed(0)}°C</span>
-                        </p>
+                <div className='absolute inset-0 w-full h-full top-4 left-4 flex flex-col space-y-10 text-white'>
+                    <div>
+                        <div className='text-white'>
+                            <p>Current Weather</p>
+                            <p>{data?.main?.temperature}</p>
+                            <p>{formattedTime}</p>
+                            <div className='w-1/4 flex justify-between items-center'>
+                                <img src={iconUrl} alt="icon" srcset="" />
+                                <p>{celsiusTemperature}°C</p>
+                                <p className='flex flex-col'>
+                                    <span>{data.weather[0].main}</span>
+                                    <span>Feel Like {(data.main.feels_like - 273.15).toFixed(0)}°C</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <p>{data.weather[0].description}</p>
-                <div className='inset-0 w-full space-x-5 flex justify-around items-center'>
-                    <p className='flex flex-col'>
-                        <span>Wind</span>
-                        <span>{(data.wind.speed* 3.6).toFixed(0)} Km/h</span>
-                    </p>
-                    <p className='flex flex-col'>Humidity</p>
-                    <p className='flex flex-col'>Visibility</p>
-                    <p className='flex flex-col'>Pressure</p>
-                    <p className='flex flex-col'>Dew Point</p>
+                    <div className='w-[550px] flex justify-between items-start'>
+                        <p className='flex flex-col'>
+                            <span>Wind</span>
+                            <span>{(data.wind.speed * 2.23694).toFixed(0)} mph</span>
+                        </p>
+                        <p className='flex flex-col'>
+                            <span>Humidity</span>
+                            <span>{data.main.humidity}%</span>
+                        </p>
+                        <p className='flex flex-col'>
+                            <span>Visibility</span>
+                            <span>{ }</span>
+                        </p>
+                        <p className='flex flex-col'>
+                            <span>Pressure</span>
+                            <span>{ }</span>
+                        </p>
+                        <p className='flex flex-col'>
+                            <span> Dew Point</span>
+                            <span>{ }</span>
+                        </p>
+                    </div>
                 </div>
-                </div>
-             
             </div>
         </div>
     );
