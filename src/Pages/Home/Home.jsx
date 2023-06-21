@@ -1,12 +1,13 @@
 import React from 'react';
-import Weather from '../DisplayWeather/Weather';
+import WeatherBody from '../DisplayWeather/WeatherBody';
+
 
 const Home = ({ temperature, locationName }) => {
     return (
         <div className='UniversalPadding mt-10'>
-            <Weather temperature={temperature}
+            <WeatherBody temperature={temperature}
                 locationName={locationName}>
-            </Weather>
+            </WeatherBody>
         </div>
     );
 };

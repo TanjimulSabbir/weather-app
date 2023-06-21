@@ -1,0 +1,47 @@
+{
+    "coord": {
+        "lon": 88.6,
+        "lat": 24.3667
+    },
+    "weather": [
+        {
+            "id": 500,
+            "main": "Rain",
+            "description": "light rain",
+            "icon": "10d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 303.77,
+        "feels_like": 310.77,
+        "temp_min": 303.77,
+        "temp_max": 303.77,
+        "pressure": 1001,
+        "humidity": 75,
+        "sea_level": 1001,
+        "grnd_level": 998
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 7.23,
+        "deg": 202,
+        "gust": 9.96
+    },
+    "rain": {
+        "1h": 0.87
+    },
+    "clouds": {
+        "all": 99
+    },
+    "dt": 1687344126,
+    "sys": {
+        "country": "BD",
+        "sunrise": 1687303072,
+        "sunset": 1687352195
+    },
+    "timezone": 21600,
+    "id": 1185128,
+    "name": "Rajshahi",
+    "cod": 200
+}

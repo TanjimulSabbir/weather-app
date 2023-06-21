@@ -9,11 +9,12 @@ function App() {
 
   const handleInput = (event) => {
     const Location = event.target.value;
-    setLocationName(Location)
+    const capitalizedLocation = Location.charAt(0).toUpperCase() + Location.substring(1);
+    setLocationName(capitalizedLocation)
   }
 
   return (
-    <div className='min-h-screen bg-blue-800'>
+    <div className='min-h-screen bg-sky-700'>
       <Header temperature={temperature} handleInput={handleInput} locationName={locationName} >
       </Header>
       <Home temperature={temperature} locationName={locationName}>
