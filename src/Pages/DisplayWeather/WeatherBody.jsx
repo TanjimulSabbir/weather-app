@@ -71,15 +71,15 @@ const WeatherBody = ({ temperature, locationName }) => {
                         </p>
                         <p className='flex flex-col'>
                             <span>Visibility</span>
-                            <span>{ }</span>
+                            <span>{data.visibility }</span>
                         </p>
                         <p className='flex flex-col'>
                             <span>Pressure</span>
-                            <span>{ }</span>
+                            <span>{data.main.pressure }</span>
                         </p>
                         <p className='flex flex-col'>
-                            <span> Dew Point</span>
-                            <span>{ }</span>
+                            <span> Cloud Covarage</span>
+                            <span>{data.clouds.all }%</span>
                         </p>
                     </div>
                 </div>
