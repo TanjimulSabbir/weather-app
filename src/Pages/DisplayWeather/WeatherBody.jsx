@@ -4,13 +4,17 @@ import getWeatherData from '../../Hooks/getWeatherData';
 import WeatherHeader from './WeatherHeader';
 import nightBg from "../../assets/images/Clear Night.webp"
 import Loader from '../../assets/Loader/Loader';
+import NotFound from '../../assets/NotFound/NotFound';
 
 const WeatherBody = ({ SelectedLocation }) => {
     const { data } = getWeatherData(SelectedLocation? SelectedLocation:"Rajshahi");
     console.log(data, "weather component");
 
     if (!data) {
-        return <Loader></Loader>
+        return <Loader></Loader>;
+    }
+    if(data.cod==404){
+        return <NotFound></NotFound>
     }
     // Time
     const timezoneOffset = data.timezone; // Replace with the actual time zone offset in seconds

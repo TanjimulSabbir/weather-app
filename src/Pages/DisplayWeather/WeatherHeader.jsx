@@ -15,18 +15,15 @@ const WeatherHeader = ({ SelectedLocation, countryName }) => {
         <div className='flex justify-between md:flex-row items-center p-4 rounded'>
 
             <div className='flex items-center md:space-x-6 px-2'>
-                <p>{SelectedLocation?SelectedLocation:"Rajshahi"}, {countryName}</p>
+                <p>{SelectedLocation ? SelectedLocation : "Rajshahi"}, {countryName}</p>
 
                 {/* Small Device */}
                 <>
-                    {/* Small Device */}
                     <div onClick={() => setOpenMenu(true)} className='md:hidden absolute right-8'>
                         <button className='p-2'>
                             <CgMenuGridO className='text-lg' />
                         </button>
                     </div>
-
-                    {/* Small Device */}
                     <div className={`md:hidden ${openMenu ? "block" : "hidden"} absolute top-0 right-0 w-[360px] min-h-screen bg-black bg-opacity-80 rounded-md pt-[25%] px-6 z-50`}>
 
                         <div className='flex relative w-full flex-col space-y-4'>

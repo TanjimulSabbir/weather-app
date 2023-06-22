@@ -16,7 +16,7 @@ function SearchCity({handleSelectChange}) {
    
     return (
         <div>
-            <select onChange={handleSelectChange} className="select select-bordered w-full max-w-xs">
+            <select onChange={handleSelectChange} className="px-4 py-1 rounded-3xl w-full bg-black outline-0 focus:ring-4">
                 {
                     sortedCities?.map(cityData => {
                         return (
