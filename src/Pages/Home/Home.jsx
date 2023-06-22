@@ -1,6 +1,6 @@
 import React from 'react';
 import WeatherBody from '../DisplayWeather/WeatherBody';
-import LocationSearchInput from '../MenuInput/MenuInput';
+import SearchCity from '../Search/SearchCity';
 
 
 const Home = ({ temperature, locationName }) => {
@@ -9,7 +9,7 @@ const Home = ({ temperature, locationName }) => {
             <WeatherBody temperature={temperature}
                 locationName={locationName}>
             </WeatherBody>
-            <LocationSearchInput></LocationSearchInput>
+     <SearchCity></SearchCity>
         </div>
     );
 };
