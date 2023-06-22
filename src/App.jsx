@@ -4,21 +4,18 @@ import Header from './Pages/Header/Header'
 import Home from './Pages/Home/Home'
 
 function App() {
-  const [locationName, setLocationName] = useState("Rajshahi");
-  const [temperature, setTemperature] = useState(32)
+  const [SelectedLocation,setSelectedLocation]=useState("");
 
-  const handleInput = (event) => {
-    const Location = event.target.value;
-    const capitalizedLocation = Location.charAt(0).toUpperCase() + Location.substring(1);
-    setLocationName(capitalizedLocation)
-  }
+  const handleSelectChange = (event) => {
+      const selected = event.target.value;
+      setSelectedLocation(selected)
+    };
 
   return (
     <div className='min-h-screen bg-sky-700'>
-      <Header temperature={temperature} handleInput={handleInput} locationName={locationName} >
+      <Header handleSelectChange={handleSelectChange} SelectedLocation={SelectedLocation} >
       </Header>
-      <Home temperature={temperature} locationName={locationName}>
-      </Home>
+      <Home SelectedLocation={SelectedLocation}></Home>
     </div>
   )
 }

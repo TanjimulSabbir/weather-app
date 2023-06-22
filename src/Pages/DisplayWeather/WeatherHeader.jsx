@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CgMenuGridO } from "react-icons/cg";
 
-const WeatherHeader = ({ locationName, countryName }) => {
+const WeatherHeader = ({ SelectedLocation, countryName }) => {
     const [openMenu, setOpenMenu] = useState(false);
     const Menu = <>
         <button className="w-full md:w-auto bg-gray-200 p-2 rounded-lg">Current Weather</button>
@@ -15,7 +15,7 @@ const WeatherHeader = ({ locationName, countryName }) => {
         <div className='flex justify-between md:flex-row items-center p-4 rounded'>
 
             <div className='flex items-center md:space-x-6 px-2'>
-                <p>{locationName}, {countryName}</p>
+                <p>{SelectedLocation?SelectedLocation:"Rajshahi"}, {countryName}</p>
 
                 {/* Small Device */}
                 <>

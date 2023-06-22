@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './Navbar';
+import SearchCity from '../Search/SearchCity';
 
-const Header = ({temperature,handleInput,locationName}) => {
+const Header = ({handleSelectChange,SelectedLocation}) => {
     return (
         <div className='mt-10'>
-            <Navbar temperature={temperature} handleInput={handleInput} locationName={locationName}  />
+            <SearchCity handleSelectChange={handleSelectChange}></SearchCity>
         </div>
     );
 };

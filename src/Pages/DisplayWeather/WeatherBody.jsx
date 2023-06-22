@@ -5,8 +5,8 @@ import WeatherHeader from './WeatherHeader';
 import nightBg from "../../assets/images/Clear Night.webp"
 import Loader from '../../assets/Loader/Loader';
 
-const WeatherBody = ({ temperature, locationName }) => {
-    const { data } = getWeatherData(locationName);
+const WeatherBody = ({ SelectedLocation }) => {
+    const { data } = getWeatherData(SelectedLocation? SelectedLocation:"Rajshahi");
     console.log(data, "weather component");
 
     if (!data) {
@@ -37,7 +37,7 @@ const WeatherBody = ({ temperature, locationName }) => {
     return (
         <div>
             <div>
-                <WeatherHeader locationName={locationName} countryName={countryName}></WeatherHeader>
+                <WeatherHeader SelectedLocation={SelectedLocation} countryName={countryName}></WeatherHeader>
             </div>
             <div className='relative mt-6'>
                 <div>
