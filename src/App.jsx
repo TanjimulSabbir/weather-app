@@ -20,7 +20,7 @@ function App() {
     };
 
   return (
-    <div className='min-h-screen bg-sky-700'>
+    <div className='min-h-screen bg-sky-700 bg-no-repeat bg-cover' style={{backgroundImage:"url('https://i.ibb.co/SJyhfh0/fog-dark-clouds-mountains.jpg')"}}>
       <Header handleSelectChange={handleSelectChange} SelectedLocation={SelectedLocation} >
       </Header>
       <Home SelectedLocation={SelectedLocation}  handleSelectChange={handleSelectChange}></Home>

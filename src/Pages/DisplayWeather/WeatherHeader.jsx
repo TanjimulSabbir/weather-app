@@ -16,11 +16,10 @@ const WeatherHeader = ({ SelectedLocation, countryName,handleSelectChange }) => 
     </>
 
     return (
-        <div className='flex justify-between md:flex-row items-center p-4 rounded '>
-
-            <div className='flex items-center md:space-x-6 px-2 text-xl text-black'>
+        <div className='flex justify-between md:flex-row items-center p-5 rounded'>
+            <div className='flex items-center md:space-x-6 px-2 text-xl text-white'>
                 <p className='flex space-x-1 items-center'>
-                    <CiLocationOn className='text-black block' />
+                    <CiLocationOn className='block' />
                     <span className="capitalize"> {SelectedLocation ? SelectedLocation : "Rajshahi"}, {countryName}</span>
                     <sub className="mt-1 text-[10px] text-gray-300 cursor-pointer" onClick={() => setOpenModal(true)}>Custom location</sub>
                 </p>

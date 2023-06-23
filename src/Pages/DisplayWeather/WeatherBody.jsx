@@ -42,24 +42,21 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
     // Temparature
     const celsiusTemperature = (data.main.temp - 273.15).toFixed(0);
     return (
-        <div>
-            <div>
+        <div className=''>
+            <div className='UniversalPadding bg-black rounded'>
                 <WeatherHeader SelectedLocation={SelectedLocation} handleSelectChange={handleSelectChange}  countryName={countryName}></WeatherHeader>
             </div>
-            <div className='relative mt-6'>
-                <div>
-                    <img className='h-[400px] md:h-auto' src={nightBg} alt='' />
-                </div>
-                <div className='absolute inset-0 w-full h-full top-4 left-4 flex flex-col text-white'>
+            <div className='w-full h-screen mt-6 text-white  bg-black p-3 md:p-6 rounded-lg bg-opacity-60'>
+                <div className='UniversalPadding w-full h-full flex flex-col'>
                     {/* Top Part */}
                     <div>
                         <div className='text-white'>
-                            <p className='text-2xl text-green-600'>Current Weather</p>
+                            <p className='text-xl text-green-500 border border-green-500 py-1 px-4 rounded-3xl inline-block'>Current Weather</p>
                             <p>{data?.main?.temperature}</p>
-                            <p className='my-4 md:my-2 text-lg'>{formattedTime}</p>
+                            <p className='my-6 md:my-3 text-lg'>{formattedTime}</p>
                             <div className='md:w-[500px] flex justify-start items-center'>
                                 <div className='flex items-center '>
-                                    <img className='pt-3' src={iconUrl} alt="icon" srcset="" />
+                                    <img className='pt-1' src={iconUrl} alt="icon" srcset="" />
                                     <p className='text-xl font-bold'>{celsiusTemperature}°C</p>
                                 </div>
                                 
@@ -71,9 +68,9 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
                         </div>
                     </div>
                     {/* Description */}
-                    <p className='text-sm py-10 md:py-6'>{data.weather[0].description}</p>
+                    <p className='text-sm py-10'>{data.weather[0].description}</p>
                     {/* Footer */}
-                    <div className='md:w-[500px] flex justify-between items-start pr-6'>
+                    <div className='w-full md:w-[500px] flex justify-between items-start'>
                         <p className='flex flex-col gap-1'>
                             <span>Wind</span>
                             <span>{(data.wind.speed * 2.23694).toFixed(0)} mph</span>
