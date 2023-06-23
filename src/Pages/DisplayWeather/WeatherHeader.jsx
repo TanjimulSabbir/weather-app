@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { CgMenuGridO } from "react-icons/cg";
 import { CiLocationOn } from "react-icons/ci"
+import CustomInput from './CustomInput';
 
-const WeatherHeader = ({ SelectedLocation, countryName }) => {
+const WeatherHeader = ({ SelectedLocation, countryName,handleSelectChange }) => {
     const [openMenu, setOpenMenu] = useState(false);
-    const btnStyle="btn btn-sm text-black border-none bg-sky-400 hover:bg-sky-500"
+    const [OpenModal, setOpenModal] = useState(false);
+    
+    const btnStyle = "btn btn-sm text-black border-none bg-sky-400 hover:bg-sky-500"
     const Menu = <>
         <button className={btnStyle}>Hourly Forecast</button>
         <button className={btnStyle}>Today Forecast</button>
@@ -18,7 +21,8 @@ const WeatherHeader = ({ SelectedLocation, countryName }) => {
             <div className='flex items-center md:space-x-6 px-2 text-xl text-black'>
                 <p className='flex space-x-1 items-center'>
                     <CiLocationOn className='text-black block' />
-                    <span> {SelectedLocation ? SelectedLocation : "Rajshahi"}, {countryName}</span>
+                    <span className="capitalize"> {SelectedLocation ? SelectedLocation : "Rajshahi"}, {countryName}</span>
+                    <sub className="mt-1 text-[10px] text-gray-300 cursor-pointer" onClick={() => setOpenModal(true)}>Custom location</sub>
                 </p>
 
                 {/* Small Device */}
@@ -42,6 +46,7 @@ const WeatherHeader = ({ SelectedLocation, countryName }) => {
             <div className='hidden lg:flex space-x-4'>
                 {Menu}
             </div>
+            {OpenModal? <CustomInput handleSelectChange={handleSelectChange} setOpenModal={setOpenModal} ></CustomInput>:""}
         </div>
     );
 };

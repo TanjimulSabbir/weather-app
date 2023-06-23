@@ -21,7 +21,7 @@ function SearchCity({ handleSelectChange }) {
                     sortedCities?.map(cityData => {
                         return (
                             <option key={cityData.city} value={cityData.city} className='flex items-center space-x-1 space-y-4 p-6'>
-                                <span>{cityData.city}, {cityData.country}</span>
+                                <span className="capitalize">{cityData.city}, {cityData.country}</span>
                             </option>
                         )
                     })

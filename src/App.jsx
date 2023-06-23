@@ -2,14 +2,21 @@ import { useState } from 'react';
 import './App.css'
 import Header from './Pages/Header/Header'
 import Home from './Pages/Home/Home'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [SelectedLocation,setSelectedLocation]=useState("");
 
   const handleSelectChange = (event) => {
       const selected = event.target.value;
-      console.log(selected,"From App Component")
-      setSelectedLocation(selected)
+      if(!selected){
+        toast("Please! Input Location!")
+      }else{
+        setSelectedLocation(selected)
+        // event.target.textContent = '';
+      }
+     
     };
 
   return (
@@ -17,6 +24,7 @@ function App() {
       <Header handleSelectChange={handleSelectChange} SelectedLocation={SelectedLocation} >
       </Header>
       <Home SelectedLocation={SelectedLocation}  handleSelectChange={handleSelectChange}></Home>
+      <ToastContainer />
     </div>
   )
 }

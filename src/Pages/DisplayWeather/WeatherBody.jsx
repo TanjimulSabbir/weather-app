@@ -1,11 +1,11 @@
 import React from 'react';
-import { WiDayCloudyHigh } from "react-icons/wi";
 import getWeatherData from '../../Hooks/getWeatherData';
 import WeatherHeader from './WeatherHeader';
 import nightBg from "../../assets/images/Clear Night.webp"
 import Loader from '../../assets/Loader/Loader';
 import NotFound from '../../assets/NotFound/NotFound';
-import CustomInput from './CustomInput';
+import { toast } from 'react-toastify';
+
 
 const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
     const accurateLocation = SelectedLocation.startsWith("Al") ? SelectedLocation.split("-").join(" ") : SelectedLocation.split(/[-(/]/)[0];
@@ -16,7 +16,8 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
         return <Loader></Loader>;
     }
     if (data.cod == 404) {
-        return <CustomInput handleSelectChange={handleSelectChange}></CustomInput>;
+        toast("Location doesn't exist!")
+        return <NotFound handleSelectChange={handleSelectChange}></NotFound>;
     }
     // Time
     const timezoneOffset = data.timezone; // Replace with the actual time zone offset in seconds
@@ -43,7 +44,7 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
     return (
         <div>
             <div>
-                <WeatherHeader SelectedLocation={SelectedLocation} countryName={countryName}></WeatherHeader>
+                <WeatherHeader SelectedLocation={SelectedLocation} handleSelectChange={handleSelectChange}  countryName={countryName}></WeatherHeader>
             </div>
             <div className='relative mt-6'>
                 <div>
