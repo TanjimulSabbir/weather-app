@@ -8,6 +8,7 @@ function App() {
 
   const handleSelectChange = (event) => {
       const selected = event.target.value;
+      console.log(selected,"From App Component")
       setSelectedLocation(selected)
     };
 
@@ -15,7 +16,7 @@ function App() {
     <div className='min-h-screen bg-sky-700'>
       <Header handleSelectChange={handleSelectChange} SelectedLocation={SelectedLocation} >
       </Header>
-      <Home SelectedLocation={SelectedLocation}></Home>
+      <Home SelectedLocation={SelectedLocation}  handleSelectChange={handleSelectChange}></Home>
     </div>
   )
 }

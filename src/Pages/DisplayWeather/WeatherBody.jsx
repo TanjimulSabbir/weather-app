@@ -5,16 +5,18 @@ import WeatherHeader from './WeatherHeader';
 import nightBg from "../../assets/images/Clear Night.webp"
 import Loader from '../../assets/Loader/Loader';
 import NotFound from '../../assets/NotFound/NotFound';
+import CustomInput from './CustomInput';
 
-const WeatherBody = ({ SelectedLocation }) => {
-    const { data } = getWeatherData(SelectedLocation? SelectedLocation:"Rajshahi");
-    console.log(data, "weather component");
+const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
+    const accurateLocation = SelectedLocation.startsWith("Al") ? SelectedLocation.split("-").join(" ") : SelectedLocation.split(/[-(/]/)[0];
+    const { data } = getWeatherData(SelectedLocation ? accurateLocation : "Rajshahi");
+    console.log(SelectedLocation.split(/[-(/]/)[0], "weather component");
 
     if (!data) {
         return <Loader></Loader>;
     }
-    if(data.cod==404){
-        return <NotFound></NotFound>
+    if (data.cod == 404) {
+        return <CustomInput handleSelectChange={handleSelectChange}></CustomInput>;
     }
     // Time
     const timezoneOffset = data.timezone; // Replace with the actual time zone offset in seconds
@@ -45,45 +47,51 @@ const WeatherBody = ({ SelectedLocation }) => {
             </div>
             <div className='relative mt-6'>
                 <div>
-                    <img src={nightBg} alt='' />
+                    <img className='h-[400px] md:h-auto' src={nightBg} alt='' />
                 </div>
-                <div className='absolute inset-0 w-full h-full top-4 left-4 flex flex-col space-y-10 text-white'>
+                <div className='absolute inset-0 w-full h-full top-4 left-4 flex flex-col text-white'>
+                    {/* Top Part */}
                     <div>
                         <div className='text-white'>
-                            <p>Current Weather</p>
+                            <p className='text-2xl text-green-600'>Current Weather</p>
                             <p>{data?.main?.temperature}</p>
-                            <p>{formattedTime}</p>
-                            <div className='w-1/4 flex justify-between items-center'>
-                                <img src={iconUrl} alt="icon" srcset="" />
-                                <p>{celsiusTemperature}°C</p>
-                                <p className='flex flex-col'>
-                                    <span>{data.weather[0].main}</span>
-                                    <span>Feel Like {(data.main.feels_like - 273.15).toFixed(0)}°C</span>
+                            <p className='my-4 md:my-2 text-lg'>{formattedTime}</p>
+                            <div className='md:w-[500px] flex justify-start items-center'>
+                                <div className='flex items-center '>
+                                    <img className='pt-3' src={iconUrl} alt="icon" srcset="" />
+                                    <p className='text-xl font-bold'>{celsiusTemperature}°C</p>
+                                </div>
+                                
+                                <p className='w-full flex justify-evenly items-center'>
+                                    <span className='text-2xl'>{data.weather[0].main}</span>
+                                    <span>Feel Like <strong>{(data.main.feels_like - 273.15).toFixed(0)}°C</strong></span>
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <p>{data.weather[0].description}</p>
-                    <div className='w-[550px] flex justify-between items-start'>
-                        <p className='flex flex-col'>
+                    {/* Description */}
+                    <p className='text-sm py-10 md:py-6'>{data.weather[0].description}</p>
+                    {/* Footer */}
+                    <div className='md:w-[500px] flex justify-between items-start pr-6'>
+                        <p className='flex flex-col gap-1'>
                             <span>Wind</span>
                             <span>{(data.wind.speed * 2.23694).toFixed(0)} mph</span>
                         </p>
-                        <p className='flex flex-col'>
+                        <p className='flex flex-col gap-1'>
                             <span>Humidity</span>
                             <span>{data.main.humidity}%</span>
                         </p>
-                        <p className='flex flex-col'>
+                        <p className='flex flex-col gap-1'>
                             <span>Visibility</span>
-                            <span>{data.visibility }</span>
+                            <span>{data.visibility}</span>
                         </p>
-                        <p className='flex flex-col'>
+                        <p className='flex flex-col gap-1'>
                             <span>Pressure</span>
-                            <span>{data.main.pressure }</span>
+                            <span>{data.main.pressure}</span>
                         </p>
-                        <p className='flex flex-col'>
+                        <p className='flex flex-col gap-1'>
                             <span> Cloud Covarage</span>
-                            <span>{data.clouds.all }%</span>
+                            <span>{data.clouds.all}%</span>
                         </p>
                     </div>
                 </div>
