@@ -48,23 +48,23 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
             <div className='UniversalPadding bg-black rounded'>
                 <WeatherHeader SelectedLocation={SelectedLocation} handleSelectChange={handleSelectChange}  countryName={countryName}></WeatherHeader>
             </div>
-            <div className='w-full h-screen mt-6 text-white  bg-black p-3 md:p-6 rounded-lg bg-opacity-60'>
+            <div className='w-full h-screen mt-6 text-white bg-black p-3 md:p-6 rounded-lg bg-opacity-60'>
                 <div className='px-4 sm:UniversalPadding w-full h-full flex flex-col'>
                     {/* Top Part */}
                     <div>
                         <div className='text-white'>
-                            <p className='text-xl text-green-500 border border-green-500 py-1 px-4 rounded-3xl inline-block'>Current Weather</p>
+                            <p className='text-base md:text-xl text-green-500 border border-green-500 py-1 px-4 rounded-3xl inline-block'>Current Weather</p>
                             <p>{data?.main?.temperature}</p>
                             <p className='my-6 md:my-3 text-lg'>{formattedTime}</p>
                             <div className='md:w-[500px] flex justify-start items-center'>
                                 <div className='flex space-x-2 items-center justify-start -ml-2'>
                                     <img className='pt-1' src={iconUrl} alt="icon" srcset="" />
-                                    <p className='text-xl font-bold'>{celsiusTemperature}°C</p>
+                                    <p className='text-lg md:text-xl font-bold'>{celsiusTemperature}°C</p>
                                 </div>
                                 
                                 <p className='w-full flex justify-evenly items-center'>
-                                    <span className='text-2xl'>{data.weather[0].main}</span>
-                                    <span>Feel Like <strong>{(data.main.feels_like - 273.15).toFixed(0)}°C</strong></span>
+                                    <span className='text-lg md:text-2xl font-bold'>{data.weather[0].main}</span>
+                                    <span>Feel Like <span className='font-bold'>{(data.main.feels_like - 273.15).toFixed(0)}°C</span></span>
                                 </p>
                             </div>
                         </div>

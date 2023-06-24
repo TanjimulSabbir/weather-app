@@ -17,18 +17,18 @@ const CustomInput = ({ handleSelectChange, setOpenModal }) => {
   }, []);
 
   return (
-    <div>
+    <div className='bg-opacity-100 z-50'>
       {/* Open the modal using ID.showModal() method */}
       <button ref={buttonRef} onClick={() => window.InputModal.showModal()}></button>
       <dialog id="InputModal" className="modal modal-middle">
-        <form method="dialog" className="modal-box bg-black bg-opacity-90">
+        <form method="dialog" className="modal-box bg-black">
           <div className='flex justify-center items-center'>
             <div className='w-full'>
               <p className='mb-4 text-xl text-center text-green-600 '>Enter Location</p>
 
-            <input onChange={handleTypeChange} onBlur={handleSelectChange} value={inputValue} type="text" placeholder="Type here location" className="input capitalize border-gray-700 w-full placeholder:text-sm placeholder:text-gray-400 placeholder:normal-case" />
+            <input onChange={handleTypeChange} onBlur={handleSelectChange} value={inputValue} type="text" placeholder="Type here location" className="input capitalize border-gray-600 w-full bg-transparent placeholder:text-sm placeholder:text-gray-400 placeholder:normal-case" />
               {/* Submit Button */}
-              <p className='btn w-full mt-5 text-green-500 border-green-500 p-1'>Submit</p>
+              <p className='btn w-full mt-5 bg-transparent text-green-500 border-green-500 p-1'>Submit</p>
        
             </div>
           </div>

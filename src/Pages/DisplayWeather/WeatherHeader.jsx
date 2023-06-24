@@ -19,7 +19,7 @@ const WeatherHeader = ({ SelectedLocation, countryName,handleSelectChange }) => 
     return (
         <div className='flex justify-between md:flex-row items-center p-5 rounded'>
             <div className='flex items-center md:space-x-6 px-2 text-xl text-white'>
-                <p className='flex space-x-1 items-center'>
+                <p className='flex space-x-1 items-center text-base md:text-xl'>
                     <CiLocationOn className='block' />
                     <span className="capitalize"> {SelectedLocation ? SelectedLocation : "Rajshahi"}, {countryName}</span>
                     <sub className="mt-1 text-[10px] text-gray-300 cursor-pointer" onClick={() => setOpenModal(true)}>Custom location</sub>
@@ -35,7 +35,7 @@ const WeatherHeader = ({ SelectedLocation, countryName,handleSelectChange }) => 
                     <div className={`md:hidden ${openMenu ? "block" : "hidden"} absolute top-0 right-0 w-[360px] min-h-screen bg-black bg-opacity-80 rounded-md pt-[25%] px-6 z-50`}>
 
                         <div className='flex relative w-full flex-col space-y-4'>
-                            <button onClick={() => setOpenMenu(false)} className='text-4xl p-2 absolute -right-4 -top-[85%] text-red-500 flex justify-center items-center rounded-full'><AiOutlineClose/></button>
+                            <button onClick={() => setOpenMenu(false)} className='text-4xl p-2 absolute -right-4 -top-1/2 md:-top-[85%] text-red-500 flex justify-center items-center rounded-full'><AiOutlineClose/></button>
                             {Menu}
                         </div>
                     </div>
