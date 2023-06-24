@@ -40,8 +40,7 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
     );
     const countryName = regionNames.of(countryCode)
     // Icon
-    const iconUrl = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-   
+    const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     // Temparature
     const celsiusTemperature = (data.main.temp - 273.15).toFixed(0);
     return (
@@ -50,7 +49,7 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
                 <WeatherHeader SelectedLocation={SelectedLocation} handleSelectChange={handleSelectChange}  countryName={countryName}></WeatherHeader>
             </div>
             <div className='w-full h-screen mt-6 text-white  bg-black p-3 md:p-6 rounded-lg bg-opacity-60'>
-                <div className='UniversalPadding w-full h-full flex flex-col'>
+                <div className='px-4 sm:UniversalPadding w-full h-full flex flex-col'>
                     {/* Top Part */}
                     <div>
                         <div className='text-white'>
@@ -73,7 +72,7 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
                     {/* Description */}
                     <p className='text-sm py-10'>{data.weather[0].description}</p>
                     {/* Footer */}
-                    <div className='w-full md:w-[500px] flex justify-between items-start'>
+                    <div className='w-full md:w-[500px] text-xs sm:text-base flex justify-between items-start'>
                         <p className='flex flex-col gap-1'>
                             <span className='cursor-pointer'>Wind <sup><BiInfoCircle className='inline-block -ml-[2px] text-[10px] mb-1'/></sup></span>
                             <span>{(data.wind.speed * 2.23694).toFixed(0)} mph</span> 

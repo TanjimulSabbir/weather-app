@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CgMenuGridO } from "react-icons/cg";
 import { CiLocationOn } from "react-icons/ci"
 import CustomInput from './CustomInput';
+import {AiOutlineClose} from 'react-icons/ai'
 
 const WeatherHeader = ({ SelectedLocation, countryName,handleSelectChange }) => {
     const [openMenu, setOpenMenu] = useState(false);
@@ -26,15 +27,15 @@ const WeatherHeader = ({ SelectedLocation, countryName,handleSelectChange }) => 
 
                 {/* Small Device */}
                 <>
-                    <div onClick={() => setOpenMenu(true)} className='lg:hidden absolute right-8'>
+                    <div onClick={() => setOpenMenu(true)} className='lg:hidden absolute right-4'>
                         <button className='p-2'>
-                            <CgMenuGridO className='text-3xl' />
+                            <CgMenuGridO className='text-2xl' />
                         </button>
                     </div>
                     <div className={`md:hidden ${openMenu ? "block" : "hidden"} absolute top-0 right-0 w-[360px] min-h-screen bg-black bg-opacity-80 rounded-md pt-[25%] px-6 z-50`}>
 
                         <div className='flex relative w-full flex-col space-y-4'>
-                            <button onClick={() => setOpenMenu(false)} className='text-sm absolute -right-4 -top-2/4 w-14 h-14 text-red-500 border border-white flex justify-center items-center rounded-full'>Close</button>
+                            <button onClick={() => setOpenMenu(false)} className='text-4xl p-2 absolute -right-4 -top-[85%] text-red-500 flex justify-center items-center rounded-full'><AiOutlineClose/></button>
                             {Menu}
                         </div>
                     </div>
