@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        "PT-Serif":"PT Serif, serif",
+        "Lora-Serif":"Lora, serif",
         "Montserrat":"Montserrat, sans-serif"
       }
     },
