@@ -33,7 +33,7 @@ const CustomInput = ({ handleSelectChange, setOpenModal }) => {
             </div>
           </div>
 
-          <button onClick={() => setOpenModal(false)} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button onClick={() => setOpenModal(false)} className="btn btn-sm btn-circle text-red-600 absolute right-2 top-2">✕</button>
         </form>
       </dialog>
     </div>

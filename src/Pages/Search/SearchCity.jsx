@@ -20,8 +20,8 @@ function SearchCity({ handleSelectChange }) {
                 {
                     sortedCities?.map(cityData => {
                         return (
-                            <option key={cityData.city} value={cityData.city} className='flex items-center text-green-600 font-Lora-Serif space-x-1 space-y-4 p-6'>
-                                <span className="capitalize">{cityData.city}, {cityData.country}</span>
+                            <option key={cityData.city} value={cityData.city} className='flex items-center text-green-600 font-Merriweather-SansSerif space-x-1 space-y-4 p-6'>
+                                <span className="capitalize text-green-600">{cityData.city}, {cityData.country}</span>
                             </option>
                         )
                     })
