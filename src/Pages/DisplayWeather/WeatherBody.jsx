@@ -64,7 +64,7 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
                                 
                                 <p className='w-full flex justify-evenly items-center'>
                                     <span className='text-lg md:text-2xl font-bold'>{data.weather[0].main}</span>
-                                    <span>Feel Like <span className='font-bold'>{(data.main.feels_like - 273.15).toFixed(0)}°C</span></span>
+                                    <span>Feel Like <span className='font-bold'> {(data.main.feels_like - 273.15).toFixed(0)}°C</span></span>
                                 </p>
                             </div>
                         </div>
