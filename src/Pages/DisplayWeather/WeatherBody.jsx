@@ -41,7 +41,7 @@ const WeatherBody = ({ SelectedLocation,handleSelectChange }) => {
     const countryName = regionNames.of(countryCode)
     // Icon
     const iconUrl = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-    toast(`http://openweathermap.org/img/w/${data.weather[0].icon}.png`)
+   
     // Temparature
     const celsiusTemperature = (data.main.temp - 273.15).toFixed(0);
     return (
