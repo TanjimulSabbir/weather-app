@@ -4,14 +4,14 @@ function SearchCity({ handleSelectChange }) {
     const [Cities, setCities] = useState(null);
 
     useState(() => {
-        fetch('https://countriesnow.space/api/v0.1/countries/population/cities')
-            .then(response => response.json())
-            .then(data => setCities(data.data))
-            .catch(error => {
-                console.log('Error occurred while fetching data:', error);
-            });
+        try {
+            fetch('https://countriesnow.space/api/v0.1/countries/population/cities')
+                .then(response => response.json())
+                .then(data => setCities(data.data))
+        } catch (error) {
 
-    })
+        }
+    }, [])
     const sortedCities = Cities?.sort((a, b) => a.city.localeCompare(b.city));
 
     return (
