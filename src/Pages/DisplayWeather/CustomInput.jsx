@@ -18,7 +18,7 @@ const CustomInput = ({ handleSelectChange, setOpenModal }) => {
 
   return (
     <div className='bg-opacity-100 z-50'>
-      {/* Open the modal using ID.showModal() method */}
+    
       <button ref={buttonRef} onClick={() => window.InputModal.showModal()}></button>
       <dialog id="InputModal" className="modal modal-middle">
         <form method="dialog" className="modal-box bg-black">
